@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli' , sans-serifs;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    width: 90vw;
+}
+.panel{
+    background-size: auto 100%;
+    background-position: center;
+    background-repeat: no-repeat;/*just show img once*/
+    height: 80vh;
+    border-radius: 50px;/**rounded corner*/
+    color: white;
+    cursor:pointer;
+    flex: 0.5;/* spcae btw wach container*/
+    margin: 10px;/*space from left side of the page*/
+    position: relative;/*Setting the top, right, 
+                        bottom, and left properties of a relatively-positioned element will cause it to be adjusted away from its normal position.*/
+    transition: flex 0.7s ease-in;
+}
+
+.panel h3 
+{
+font-size: 24px;
+position: absolute;/*  it uses the document body, and moves along with page scrolling.*/
+bottom: 20px;/*txt at bottom of container;*/
+left:20px;
+margin: 0;
+opacity: 0;/*invisible text*/
+}
+
+.panel.active{
+flex:5;
+}
+.panel.active h3{
+opacity: 1;
+transition: opacity 0.3s ease-in 0.4s;
+}
+@media(max-width:480px)
+{
+    .container{
+        width:100vw;
+    }
+    .panel:nth-of-type(4),.panel:nth-of-type(5) /*last 2 container on small screens*/{
+
+display :none;
+}
+}
